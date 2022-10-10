@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD mapper 3.0//EN"  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- mapper为映射的根节点-->
+<!-- mapper为映射的根节点，namespace指定Dao接口-->
+<mapper namespace="com.balconyjh.testdoc.mapper.UserMapper">
+
+    <!--id ="接口中的方法名"
+　　parameterType="传入的参数类型"
+　　resultType = "返回实体类对象，使用包.类名"-->
+    <select id="findById" parameterType="int"  resultType="com.balconyjh.testdoc.domain.User">
+        SELECT uid,uname,uage FROM users WHERE uid =#{uid};
+    </select>
+    <!--插入操作 -->
+    <insert id="addUser" parameterType="com.example.chapter03mybatis.domain.User">
+        INSERT INTO users(uid,uname,uage) VALUES(#{uid},#{uname},#{uage})
+    </insert>
+    <!--    修改操作-->
+    <update id="updateUser" parameterType="com.example.chapter03mybatisclass9.domain.User" >
+        UPDATE users SET uname = #{uname},uage=#{uage} WHERE uid = #{uid}
+    </update>
+    <!--    删除操作-->
+    <delete id="deleteUser" parameterType="Integer" >
+        DELETE FROM users WHERE uid =#{uid}
+    </delete>
+</mapper>

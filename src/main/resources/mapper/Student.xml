@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD mapper 3.0//EN"  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- mapper为映射的根节点-->
+<!-- mapper为映射的根节点，namespace指定Dao接口-->
+<mapper namespace="com.balconyjh.testdoc.mapper.StudentMapper">
+    <resultMap id="studentMap" type="com.balconyjh.testdoc.domain.Student">
+        <id property="id" column="sid"/>
+        <result property="name" column="sname"/>
+        <result property="age" column="sage"/>
+    </resultMap>
+
+    <select id="findAllStudent" resultMap="studentMap">
+        SELECT * FROM t_student;
+    </select>
+</mapper>
