@@ -1,9 +1,9 @@
 package com.balconyjh.testdoc.domain;
 
 public class User {
-    private int uid;             //用户id
-    private String uname;       //用户姓名
-    private int uage;            //用户年龄
+    private int uid;
+    private String uname;
+    private int uage;
 
     public int getUid() {
         return uid;
